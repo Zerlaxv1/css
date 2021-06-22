@@ -6,8 +6,8 @@ body {
     background-size: cover;
 }
 
-.user-page-unscoped.purple {
-    background-color: rgb(0 0 0 / 30%) !important;
+#app.transparent {
+    background-color: rgb(0 0 0 / 30%);
 }
 
 .avatar[data-v-4f7beb35] {
