@@ -30,7 +30,7 @@ body {
     transition: .2s;
 }
 
-.banner[data-v-4f7beb35] {
+.banner[data-v-2431f6d8] {
     background-image: none !important;
     background-color: #000000b8 !important;
 }
@@ -42,7 +42,7 @@ body {
     position: relative;
 }
 
-.banner-content[data-v-4f7beb35] {
+.banner-content[data-v-2431f6d8] {
     align-items: center;
     display: flex;
     width: 100%;
