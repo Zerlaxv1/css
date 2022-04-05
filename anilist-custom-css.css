@@ -1,9 +1,45 @@
-/* Background image (change the URL to change the image) */
+/*////////////////////////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////// ALL / PFP / ETC //////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*/ Background /*/
+
+
 body {
     background: rgb(var(--color-background)) url("https://media.discordapp.net/attachments/723268127504466044/844311901155622932/cropped-1920-1080-743487.jpg") center/100% fixed;
-    opacity: 1;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-blend-mode: color-dodge;
+}
+
+.wrap,
+.reply {
+    border-radius: 20px !important;
+    overflow: visible !important;
+}
+
+img.avatar,
+h1.name {
+    margin: auto;
+}
+
+.banner {
+    background-image: none !important;
+    background-color: rgb(36, 37, 56, 0) !important;
+    height: auto !important;
+}
+
+.banner-content {
+    display: flex !important;
+    align-content: center;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    height: auto !important;
+    --pad: 85px;
+    padding-top: var(--pad) !important;
 }
 
 #app.transparent {
@@ -14,13 +50,46 @@ body {
     background-color: rgb(0 0 0 / 30%);
 }
 
-.container {
+
+/*/ Dropdown /*/
+
+
+.user-wrap:hover:after {
+    height: 60px !important;
+    width: 400% !important;
+}
+
+
+/*/ Avatar /*/
+
+
+.banner-content > .avatar {
+    max-height: 15% !important;
+    max-width: 15% !important;
+    transition: all .5s;
+}
+
+.banner-content > .avatar:hover {
+    transition:all .5s;
+    transform: scale(1.1);
+}
+
+
+/*/ Name /*/
+
+
+.name-wrapper {
+	padding: 20px 0px 5px 0px !important;
+    text-shadow: 0 0 1em currentColor;
+}
+
+.content.container {
     max-width: 95%;
     padding-left: 0px;
     padding-right: 0px;
 }
 
-.description[data-v-a74497dc] {
+.description {
     color: rgb(var(--color-text-light));
     font-size: 1.4rem;
     line-height: 1.5;
@@ -30,185 +99,171 @@ body {
     transition: .2s;
 }
 
-.banner[data-v-2431f6d8] {
-    background-image: none !important;
-    background-color: #000000b8 !important;
+h1 {
+	font-size: 3rem !important;
 }
 
-.banner .container[data-v-4f7beb35] {
-    align-items: flex-end;
-    display: flex;
-    height: 100%;
+/*/ nav bar /*/
+
+.nav .container{
+    font-size: 1.4rem;
+    text-align: center;
+    background-color: rgba(var(--color-foreground),0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+}
+
+.nav-wrap {
+    background: rgba(0, 0, 0, 0) !important;
+    width: 80% !important;
+    margin: auto;
+}
+
+#nav {
+    width: 80%;
+    border-radius: 0px 0px 30px 30px;
+    left: calc((100% - 80%) / 2); 
+}
+
+.nav .link {
+    color: rgb(var(--color-text-light));
+    margin: 5px 10px !important;
+    border-radius: 15%;
+    text-shadow: 0 0 1em currentColor;
+    background: none !important;
+}
+
+.nav .router-link-active {
+    color: rgb(var(--color-blue));
+}
+
+/*/ \/ steal to RenZed \/ /*/
+
+
+.nav > .link {
     position: relative;
+    
 }
 
-.banner-content[data-v-2431f6d8] {
-    align-items: center;
-    display: flex;
+.nav > .link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    background: rgb(var(--color-blue));
+    transition: all 0.3s ease-in-out;
+}
+
+.nav > .router-link-active::after {
+    left: 0;
     width: 100%;
-    flex-direction: column;
+    background: rgb(var(--color-blue-dim));
+    text-shadow: 0 0 1em currentColor;
 }
 
-/* Transparent banner - use together with background image */
-.banner[data-v-5445dac8] {
-    background-color: rgba(0, 0, 0, 0.63);
+.nav > .link:hover::after {
+    left: 0;
+    width: 100%;
+    background: rgb(var(--color-blue));
+    text-shadow: 0 0 1em currentColor;
 }
 
-.logo[data-v-4fbac4e1]{
-    content: url(https://cdn.upload.systems/uploads/CQuHBRNB.png);
-    height: 50px;
-    width: 50px;
-}
+/*/ /\ steal to RenZed /\ /*/
 
-/* Small avatar -> circle frame */
-.text .avatar[data-v-6c3dc0b8]  {
-    border-radius: 100%;
-    transition: transform .2s;
-}
-/* Small avatar hover */
-.text .avatar[data-v-6c3dc0b8]:hover  {
-    transform: scale(4);
-}
 
-/* Comments section avatar -> circle frame */
-.avatar[data-v-5a191921]  {
-    border-radius: 100%;
-    transition: transform .2s;
-}
-/* Comments section avatar hover */
-.avatar[data-v-5a191921]:hover {
-    transform: scale(6);
-}
+/*/ Others /*/
 
-/* favourites section */
-.favourite[data-v-1496db1c] {
-    transition: transform .2s;
-    border-radius: 20%;
-    position: static;
-}
-/* favourites section hover */
-.favourite[data-v-1496db1c]:hover {
-    transform: scale(1.6);
-    position: static;
-}
-/*  favourites section bugfix */
-.favourites-wrap[data-v-1496db1c]{
-    overflow: visible;
-}
 
-/* About section scrollbar */
-.user .about > div.content-wrap {
-  scrollbar-width: thin;
-  scrollbar-color: rgb(179, 104, 230) rgba(31, 35, 45, 0.95);
-}
-
-/* Anime/manga progress bar color */
-.user-page-unscoped.red .progress .bar {
-    background: linear-gradient(to right, #f00 5%, #ffed00 97%);
-}
-
-/* Profile activity (status/messages/list) Makes border corners rounded. Also required as bugfix for .avatar hover! */
-.wrap[data-v-6c3dc0b8] {
-    border-radius: 20px;
-    overflow: visible;
-}
-/* Anime/manga displaying rounded corners, part 2 */
-.cover[data-v-6c3dc0b8]{
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-/* Horizontal rule border settings */
-.markdown hr {
-    border: solid 1px rgb(179, 104, 230);
-    border-radius: 1px;
-}
-
-/* Blockquotes centered*/
-.markdown blockquote {
-  margin-right: auto;
-}
-
-/* Site background color transparency */
-.site-theme-dark{
- --color-foreground: 16,24,35,.90;
-}
-
-/*Hides hoh download button*/
 .hohDownload {
     display: none;
 }
 
-/* Changes scrollbar for whole page (Firefox)*/
-html {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(179, 104, 230) rgba(31, 35, 45, 0.95);
+.actions {
+	margin-left: unset !important;
 }
 
-/* Chrome scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-    background: #01232d;
-}
-::-webkit-scrollbar-corner {
-    background: #01232d;
-}
-::-webkit-scrollbar-thumb {
-    background: #b368e6;
-    -webkit-border-radius: 1ex;
+.nav-btn {
+    margin-left: unset !important;
+    border-radius: 40px !important;
+    padding: 10px 120px !important;
 }
 
-/* Modifies load-more button */
-.load-more[data-v-6f203cf2]{
-    border-radius: 30px;
-    font-family: 'Brush Script MT', cursive;
-    font-size: 3rem;
-    color: rgb(92, 55, 117);
-    margin:auto;
-    max-width: 250px;
+
+/*/ Anilist logo /*/
+
+
+.logo img:hover {
+    transition: all .5s;
+    filter: blur(5px);
 }
 
-/* Changes top navbar's color. (Normal mode and hover)*/
-.site-theme-dark .nav-unscoped.transparent  {
-    background: rgb(var(--color-foreground));
-}
-.site-theme-dark .nav-unscoped.transparent:hover {
-    background: rgb(16, 24, 35, 0.99);
-}
-.site-theme-dark .nav-unscoped{
-    background: rgb(var(--color-foreground));
-}
-.site-theme-dark .nav-unscoped:hover{
-    background: rgb(16, 24, 35, 0.99);
+.logo img {
+    transition: all .5s;
 }
 
-/* Changes "Overview/Anime List/Manga List..." nav section. - shorter navbar*/
-.nav-wrap[data-v-5445dac8] {
-    background: rgb(var(--color-foreground));
-    width: 95%;
-    margin: 0 auto;
-    border-radius: 30px;
-}
-.nav[data-v-5445dac8] {
-    padding: 0px;
+
+/*////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////// Anime list //////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////*/
+
+/*
+.medialist.cards .entry-card .cover .image, 
+.title, 
+.edit {
+    transition: all .5s ease-in-out;
 }
 
-/* Re-aligns profile picture and name. Part of shorter navbar*/
-.banner .container[data-v-5445dac8]
-{
-    max-width: 95%;
+.medialist.cards .entry-card .cover .image, 
+.title, 
+.edit:hover {
+    transition: all .5s ease-in-out;
+    transform: perspective(100px) rotateX(10deg) ;
+}
+*/
+
+/*////////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////// Overview ///////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*/ load button /*/
+
+
+.load-more {
+    width: 20%;
+    margin: auto !important;
+    background: none !important;
+    border: solid rgb(var(--color-blue));
+    box-shadow: inset 0 0 .5em rgb(var(--color-blue)), 0 0 .5em rgb(var(--color-blue));
+    text-shadow: 0 0 1em rgb(var(--color-blue));
+    color: rgb(var(--color-blue));
+    border-radius: 10px !important;
 }
 
-/* Re-aligns more stuff... Part of shorter navbar*/
-.content.container {
-    max-width: 95%;
-    padding-left: 0px;
-    padding-right: 0px;
+.load-more:hover {
+    background: rgb(var(--color-blue)) !important;
+    color: rgb(255, 255, 255) !important;
+    text-shadow: none !important;
+    box-shadow: inset 0 0 1em rgb(var(--color-blue)), 0 0 1em rgb(var(--color-blue)) !important;
+
 }
-.activity-feed-wrap[data-v-09492909] {
-    margin-left: 3%;
+
+
+/*/ fav Animes /*/
+
+
+.favourite {
+    transition: all .5s ease-in-out;
 }
-.stats-wrap[data-v-5c30286e]
-{
-    margin-left: 3%;
+
+.favourite:hover {
+    transition: all .5s ease-in-out;
+    transform: perspective(100px) rotateX(5deg) scale(1.2);
+    z-index: 10;
+}
+
+.favourites-wrap {
+    overflow: visible !important;
 }
