@@ -50,9 +50,13 @@ h1.name {
     background-color: rgb(0 0 0 / 30%);
 }
 
-.content-wrap, .wrap {
+.content-wrap, .details {
     background: rgba(var(--color-foreground), 0.7) !important;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
+}
+
+.wrap {
+    background: none !important;
 }
 
 /*/ Dropdown /*/
@@ -72,7 +76,7 @@ h1.name {
     border-radius: 20px;
     text-align: -webkit-center;
     left: 15%;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
 }
 */
 /*/ Avatar /*/
@@ -124,7 +128,7 @@ h1 {
     font-size: 1.4rem;
     text-align: center;
     background-color: rgba(var(--color-foreground),0.7);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
     border-radius: 5px;
 }
 
@@ -138,6 +142,8 @@ h1 {
     width: 80%;
     border-radius: 0px 0px 30px 30px;
     left: calc((100% - 80%) / 2); 
+	background: rgb(var(--color-foreground), 0.5) !important;
+    backdrop-filter: blur(4px);
 }
 
 .nav .link {
@@ -205,6 +211,12 @@ h1 {
     padding: 10px 120px !important;
 }
 
+/*/ Activity feed /*/
+
+.activity-feed {
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    grid-row-gap: 20px;
+}
 
 /*/ Anilist logo /*/
 
