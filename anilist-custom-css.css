@@ -50,7 +50,7 @@ h1.name {
     background-color: rgb(0 0 0 / 30%);
 }
 
-.content-wrap, .details {
+.content-wrap {
     background: rgba(var(--color-foreground), 0.7) !important;
     backdrop-filter: blur(4px);
 }
@@ -303,3 +303,54 @@ h1 {
 .medialist.cards .entry-card .title {
     backdrop-filter: blur(3px);
 }
+
+/*///////*/
+
+.list.small {
+    min-height: 250px;
+    grid-template-columns: none !important;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.list {
+    grid-template-rows: 16em auto !important;
+    grid-template-columns: none !important;
+}
+/*/*/
+.details, .cover {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.cover {
+    z-index: 0;
+}
+
+.details {
+	height: 30%;
+    background: rgb(var(--color-foreground), 0.3) !important;
+	backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgb(var(--color-blue));
+    padding-right: 0px !important;
+}
+
+.title {
+    display: block;
+}
+
+/*/*/
+.activity-feed {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
+	grid-row-gap: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+    grid-column-gap: 5px !important;
+}
+
+.activity-entry {
+	margin-bottom: 0px !important;
+}
+/*/*/
