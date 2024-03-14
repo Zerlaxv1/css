@@ -7,7 +7,7 @@
 
 
 body {
-    background: rgb(var(--color-background)) url("https://media.discordapp.net/attachments/723268127504466044/844311901155622932/cropped-1920-1080-743487.jpg") center/100% fixed;
+    background: rgb(var(--color-background)) url("https://files.catbox.moe/bhkajn.jpg") center/100% fixed;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-blend-mode: hard-light;
