@@ -363,6 +363,6 @@ h1 {
 /* about me */
 
 /* change color of the separator to match the profile color*/
-.markdown > hr {
+.markdown hr {
     background-color: rgb(var(--color-blue-dim));
 }
