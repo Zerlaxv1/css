@@ -138,6 +138,11 @@ h1 {
     margin: auto;
 }
 
+/*hide the bg of the child of the nav bar that has 2 time blur applied to it  */
+#nav > .wrap {
+    background: none !important;
+}
+
 #nav {
     width: 80%;
     border-radius: 0px 0px 30px 30px;
