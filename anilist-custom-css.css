@@ -359,3 +359,10 @@ h1 {
 	margin-bottom: 0px !important;
 }
 /*/*/
+
+/* about me */
+
+/* change color of the separator to match the profile color*/
+.markdown > hr {
+    background-color: rgb(var(--color-blue-dim));
+}
