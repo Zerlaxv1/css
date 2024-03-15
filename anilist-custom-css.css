@@ -364,5 +364,10 @@ h1 {
 
 /* change color of the separator to match the profile color*/
 .markdown hr {
-    background-color: rgb(var(--color-blue-dim));
+    border: solid 2px rgb(var(--color-blue));
+}
+
+/* Search bar */
+.quick-search {
+    left : auto !important;
 }
