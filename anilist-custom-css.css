@@ -13,12 +13,6 @@ body {
     background-blend-mode: hard-light;
 }
 
-.wrap,
-.reply {
-    border-radius: 20px !important;
-    overflow: visible !important;
-}
-
 img.avatar,
 h1.name {
     margin: auto;
@@ -53,10 +47,6 @@ h1.name {
 .content-wrap {
     background: rgba(var(--color-foreground), 0.7) !important;
     backdrop-filter: blur(4px);
-}
-
-.wrap {
-    background: none !important;
 }
 
 /*/ Dropdown /*/
@@ -216,13 +206,6 @@ h1 {
     padding: 10px 120px !important;
 }
 
-/*/ Activity feed /*/
-
-.activity-feed {
-    grid-template-columns: 1fr 1fr 1fr 1fr !important;
-    grid-row-gap: 20px;
-}
-
 /*/ Anilist logo /*/
 
 
@@ -235,26 +218,6 @@ h1 {
 .logo img {
     transition: all .5s;
 }
-
-
-/*////////////////////////////////////////////////////////////////////////////////////*/
-/*////////////////////////////////// Anime list //////////////////////////////////////*/
-/*////////////////////////////////////////////////////////////////////////////////////*/
-
-/*
-.medialist.cards .entry-card .cover .image, 
-.title, 
-.edit {
-    transition: all .5s ease-in-out;
-}
-
-.medialist.cards .entry-card .cover .image, 
-.title, 
-.edit:hover {
-    transition: all .5s ease-in-out;
-    transform: perspective(100px) rotateX(10deg) ;
-}
-*/
 
 /*////////////////////////////////////////////////////////////////////////////////////*/
 /*/////////////////////////////////// Overview ///////////////////////////////////////*/
@@ -309,55 +272,16 @@ h1 {
     backdrop-filter: blur(3px);
 }
 
-/*///////*/
-
-.list.small {
-    min-height: 250px;
-    grid-template-columns: none !important;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.list {
-    grid-template-rows: 16em auto !important;
-    grid-template-columns: none !important;
-}
 /*/*/
-.details, .cover {
-    grid-row-start: 1;
-    grid-row-end: 1;
-    grid-column-start: 1;
-    grid-column-end: 1;
-}
 
 .cover {
     z-index: 0;
-}
-
-.details {
-	height: 30%;
-    background: rgb(var(--color-foreground), 0.3) !important;
-	backdrop-filter: blur(4px);
-    border-bottom: 1px solid rgb(var(--color-blue));
-    padding-right: 0px !important;
 }
 
 .title {
     display: block;
 }
 
-/*/*/
-.activity-feed {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr !important;
-	grid-row-gap: 10px;
-    grid-column-gap: 10px !important;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.activity-entry {
-	margin-bottom: 0px !important;
-}
 /*/*/
 
 /* about me */
