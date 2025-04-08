@@ -2,7 +2,7 @@
 
 /* feed */
 .activity-feed {
-    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
     grid-gap: 20px !important; 
     padding: 10px !important;
 }
