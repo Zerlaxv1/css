@@ -161,7 +161,7 @@
     right: 15px !important;
     bottom: unset !important;
     top: 180px !important;
-    background-color: rgba(var(--color-background-800), 0.7) !important;
+    background-color: rgba(var(--color-background-300), 0.7) !important;
     border-radius: 8px !important;
     padding: 5px 8px !important;
     backdrop-filter: blur(4px);
