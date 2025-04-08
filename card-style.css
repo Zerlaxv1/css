@@ -1,0 +1,75 @@
+/* card status Activity */
+
+/* feed */
+.activity-feed {
+    grid-template-columns: 1fr 1fr 1fr !important;
+}
+
+/* card   */
+.activity-entry {
+    overflow: hidden;
+}
+
+.list.small {
+    grid-template-columns: auto !important;
+    min-height: 300px !important;
+}
+
+/* image */
+.cover {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* status */
+.details {
+    padding-right: 14px !important;
+    justify-content: flex-start !important;
+    padding: 10px 14px 14px 16px !important;
+    min-height: 60px !important;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+}
+
+.status {
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.wrap {}
+
+/* action buttons */
+
+.actions {
+    display: none;
+    bottom: 72px !important;
+}
+
+.activity-entry:hover .actions {
+    display: unset;
+}
+
+.activity-entry:hover .cover {
+    filter: brightness(0.6);
+}
+
+/* 
+size up action btn
+backgrnd time
+hide time when not hover
+time inverse color ? (dark on dark ?)
+
+*/

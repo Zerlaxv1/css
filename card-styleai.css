@@ -1,0 +1,350 @@
+/* Activity Card Styling */
+.activity-card,
+.activity-entry {
+    background: rgb(var(--color-background-100, 255, 255, 255));
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 0;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card:hover,
+.activity-entry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* List item styling - changed to vertical layout */
+.activity-card .list,
+.activity-entry .list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Cover image styling - enlarged for vertical layout */
+.activity-card .cover,
+.activity-entry .cover {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px 8px 0 0;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+    display: block;
+    position: relative;
+}
+
+.activity-card .cover::after,
+.activity-entry .cover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.activity-card:hover .cover::after,
+.activity-entry:hover .cover::after {
+    opacity: 1;
+}
+
+.activity-card:hover .cover,
+.activity-entry:hover .cover {
+    transform: scale(1.03);
+}
+
+/* Details section - full width for vertical layout */
+.activity-card .details,
+.activity-entry .details {
+    position: relative;
+    padding: 14px;
+    width: 100%;
+}
+
+/* User name styling - smaller to reduce prominence */
+.activity-card .name,
+.activity-entry .name {
+    color: rgb(var(--color-blue-600, 61, 180, 242));
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.activity-card .name:hover,
+.activity-entry .name:hover {
+    text-decoration: underline;
+}
+
+/* Title styling - enhanced and extracted from data attributes */
+.activity-card .title,
+.activity-entry .list.small::after {
+    color: rgb(var(--color-text-500, 92, 114, 138));
+    font-weight: 800; /* Increased from 700 to 800 for bolder appearance */
+    font-size: 16px;
+    margin: 4px 0 12px; /* Increased bottom margin from 8px to 12px */
+    line-height: 1.4;
+    display: block;
+    padding-bottom: 8px; /* Added padding to visually separate from status */
+    border-bottom: 1px solid rgba(var(--color-text-200, 132, 153, 177), 0.15); /* Added subtle separator line */
+}
+
+.activity-entry .list.small::after {
+    content: attr(data-title);
+    padding: 12px 16px 8px; /* Added bottom padding */
+    font-weight: 800; /* Ensure consistency with .title */
+}
+
+.activity-card .title:hover,
+.activity-entry .list.small:hover::after {
+    color: rgb(var(--color-blue-600, 61, 180, 242));
+    text-decoration: underline;
+}
+
+/* Status text styling - enhanced for prominence and separation */
+.activity-card .status,
+.activity-entry .status {
+    color: rgb(var(--color-gray-700, 92, 114, 138));
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 12px; /* Increased from 8px for better separation from title */
+    font-weight: 400;
+    font-style: italic; /* Makes status text visually distinct from title */
+    opacity: 0.9; /* Slight transparency to de-emphasize compared to title */
+}
+
+/* Remove duplicate avatar from details section */
+.activity-card .details .avatar,
+.activity-entry .details .avatar {
+    display: none;
+}
+
+/* Dropdown styling */
+.activity-card .entry-dropdown,
+.activity-entry .entry-dropdown,
+.activity-card .extras-dropdown,
+.activity-entry .extras-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.activity-card:hover .entry-dropdown,
+.activity-entry:hover .entry-dropdown,
+.activity-card:hover .extras-dropdown,
+.activity-entry:hover .extras-dropdown {
+    opacity: 1;
+}
+
+.activity-card .el-dropdown-link,
+.activity-entry .el-dropdown-link {
+    color: #fff;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.activity-card .el-dropdown-link:hover,
+.activity-entry .el-dropdown-link:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Time and actions row */
+.activity-card .time,
+.activity-entry .time {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: rgb(var(--color-gray-500, 122, 133, 143));
+    font-size: 12px;
+    padding: 0 16px;
+}
+
+/* Action icons overlay */
+.activity-card .actions,
+.activity-entry .actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.activity-card:hover .actions,
+.activity-entry:hover .actions {
+    opacity: 1;
+}
+
+.activity-card .action,
+.activity-entry .action {
+    margin-left: 12px;
+    cursor: pointer;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.activity-card .action:hover, 
+.activity-card .action.active,
+.activity-entry .action:hover,
+.activity-entry .action.active {
+    background: rgba(61, 180, 242, 0.8);
+    transform: scale(1.1);
+}
+
+.activity-card .action svg,
+.activity-entry .action svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Add small user info at top of card */
+.activity-card .user-info,
+.activity-entry .user-info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.activity-card:hover .user-info,
+.activity-entry:hover .user-info {
+    opacity: 1;
+}
+
+/* Create user avatar in overlay from existing avatar */
+.activity-card .cover:hover::before,
+.activity-entry .cover:hover::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    background-image: inherit;
+    background-size: cover;
+    transform: scale(1.5);
+}
+
+/* Add username overlay on hover */
+.activity-entry .cover:hover .name,
+.activity-card .cover:hover .name {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 10;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+/* Responsive styling */
+@media (max-width: 760px) {
+    .activity-card .cover,
+    .activity-entry .cover {
+        height: 160px;
+    }
+    
+    .activity-card .status,
+    .activity-entry .status {
+        font-size: 13px;
+    }
+    
+    .activity-card .details,
+    .activity-entry .details {
+        padding: 10px;
+    }
+}
+
+/* Custom additional styling for different activity types */
+.activity-card.activity-anime_list .cover,
+.activity-card.activity-manga_list .cover,
+.activity-entry.activity-anime_list .cover,
+.activity-entry.activity-manga_list .cover {
+    height: 220px;
+}
+
+.activity-card .action.replies,
+.activity-card .action.likes,
+.activity-entry .action.replies,
+.activity-entry .action.likes {
+    margin-left: 10px;
+}
+
+/* Hide details for anime/manga activity types to focus on the cover */
+.activity-entry.activity-anime_list .details,
+.activity-entry.activity-manga_list .details {
+    display: none;
+}
+
+/* Add timestamp at the bottom of the card */
+.activity-entry time,
+.activity-card time {
+    display: block;
+    font-size: 12px;
+    color: rgb(var(--color-gray-500, 122, 133, 143));
+    margin: 0 16px 12px;
+}
+
+/* Make actions appear more prominently on post cards */
+.activity-entry .actions,
+.activity-card .actions {
+    transition: opacity 0.2s ease;
+}
+
+/* Improve hover animations */
+.activity-card,
+.activity-entry {
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure elements within the cover have proper position context */
+.activity-card .cover,
+.activity-entry .cover {
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Ensure title text is visible and doesn't clash with any overlay */
+.activity-entry .list.small::after {
+    padding-top: 14px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    font-weight: 800; /* Bold title */
+    letter-spacing: 0.01em; /* Slightly improved readability */
+}
